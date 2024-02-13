@@ -1,3 +1,4 @@
+package P1;
 /**
  * Pemilihan1
  */
