@@ -26,5 +26,11 @@ public class BukuMain11 {
         System.out.println();
         Buku11 bukuFabian = new Buku11("Jujutsu Kaisen", "Gege Akutami", 200, 100, 40000);
         bukuFabian.tampilInformasi();
+        bukuFabian.terjual(2);
+        bukuFabian.hitungHargaTotal();
+        bukuFabian.hitungDiskon();
+        bukuFabian.hitungHargaBayar();
+        System.out.println();
+        bukuFabian.tampilInformasi();
     }
 }
