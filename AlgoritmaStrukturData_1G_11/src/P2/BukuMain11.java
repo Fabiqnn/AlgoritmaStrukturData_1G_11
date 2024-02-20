@@ -18,8 +18,13 @@ public class BukuMain11 {
         bk1.gantiHarga(60000);
         bk1.tampilInformasi();
 
+        System.out.println();
         Buku11 bk2 = new Buku11("Self Reward", "Maheera Ayesha", 160, 29, 59000);
         bk2.terjual(11);
         bk2.tampilInformasi();
+
+        System.out.println();
+        Buku11 bukuFabian = new Buku11("Jujutsu Kaisen", "Gege Akutami", 200, 100, 40000);
+        bukuFabian.tampilInformasi();
     }
 }
