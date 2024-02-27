@@ -27,5 +27,10 @@ public class Segitiga {
         return intSisiMiring;
     }
 
+    public void tampilHasil() {
+        System.out.println("Luas : " + hitungLuas());
+        System.out.println("Keliling : " + hitungKeliling());
+        System.out.println("================");
+    }
     
 }

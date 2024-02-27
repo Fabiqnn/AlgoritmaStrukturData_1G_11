@@ -3,11 +3,9 @@ package P3.ArraySegitiga;
 /**
  * ArraySegitiga
  */
-import java.util.*;
 public class ArraySegitiga {
 
     public static void main(String[] args) {
-        Scanner sc11 = new Scanner(System.in);
 
         Segitiga[] arrSegitiga = new Segitiga[4];
 
@@ -15,7 +13,11 @@ public class ArraySegitiga {
         arrSegitiga[1] = new Segitiga(20, 10);
         arrSegitiga[2] = new Segitiga(15, 6);
         arrSegitiga[3] = new Segitiga(25, 10);
-
-       
+        
+        System.out.println("================");
+        for (int i = 0; i < arrSegitiga.length; i++) {
+            System.out.println("Segitiga ke-" + i);
+            arrSegitiga[i].tampilHasil();
+        }
     }
 }
