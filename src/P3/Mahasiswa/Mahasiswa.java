@@ -31,5 +31,13 @@ public class Mahasiswa {
             databaseArr[i].tampilHasil();
             System.out.println("====================");
         }
+        System.out.println("====================");
+
+        System.out.printf("Rata - Rata IPK : %.2f\n", Database.rataRataIPK());
+        
+        Database MhsTerbaik = Database.cariMhsTerbaik(databaseArr);
+        System.out.println("== Mahasiswa Terbaik ==");
+        MhsTerbaik.tampilHasil();
+
     }
 }
