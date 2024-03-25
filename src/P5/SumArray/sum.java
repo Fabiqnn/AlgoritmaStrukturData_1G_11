@@ -24,11 +24,11 @@ public class sum {
     public double totalDC(double arr[], int l, int r) {
         if (l == r) {
             return arr[l];
-        } else if(l < r) {
-            int mid = (l+r) / 2;
-            double lSum = totalDC(arr, l, mid-1);
-            double rSum = totalDC(arr, mid+1, r);
-            return lSum+rSum+arr[mid];
+        } else if (l < r) {
+            int mid = (l + r) / 2;
+            double lSum = totalDC(arr, l, mid - 1);
+            double rSum = totalDC(arr, mid + 1, r);
+            return lSum + rSum + arr[mid];
         }
         return 0;
     }
