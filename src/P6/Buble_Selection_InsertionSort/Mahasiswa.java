@@ -1,4 +1,4 @@
-package P6.BubleSort;
+package P6.Buble_Selection_InsertionSort;
 
 /**
  * Mahasiswa

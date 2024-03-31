@@ -1,4 +1,4 @@
-package P6.BubleSort;
+package P6.Buble_Selection_InsertionSort;
 
 /**
  * DaftarMahasiswaBerprestasi
@@ -33,6 +33,21 @@ public class DaftarMahasiswaBerprestasi {
                     listMhs[j+1] = temp;
                 }
             }
+        }
+    }
+
+    public void selectionSort() {
+        for (int i = 0; i < listMhs.length - 1; i++) {
+            int idxMin = i;
+            for (int j = i+1; j < listMhs.length; j++) {
+                if (listMhs[j].ipk < listMhs[idxMin].ipk) {
+                    idxMin = j;
+                }
+            }
+            //swap
+            Mahasiswa temp = listMhs[idxMin];
+            listMhs[idxMin] = listMhs[i];
+            listMhs[i] = temp;
         }
     }
 }

@@ -1,4 +1,4 @@
-package P6.BubleSort;
+package P6.Buble_Selection_InsertionSort;
 
 
 /**
@@ -26,9 +26,16 @@ public class MainClass {
 
         System.out.println();
 
-        System.out.println("Data Mahasiswa yang Sudah Disorting Berdasarkan IPK : ");
+        System.out.println("Data Mahasiswa yang Sudah Disorting Buble Berdasarkan IPK : ");
         System.out.println("======================");
         list.bubleSort();
+        list.tampil();
+
+        System.out.println();
+        
+        System.out.println("Data Mahasiswa yang Sudah Disorting Selection Berdasarkan IPK : ");
+        System.out.println("======================");
+        list.selectionSort();
         list.tampil();
     }
 }
