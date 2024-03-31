@@ -37,5 +37,13 @@ public class MainClass {
         System.out.println("======================");
         list.selectionSort();
         list.tampil();
+        
+        System.out.println();
+        
+        System.out.println("Data Mahasiswa yang Sudah Disorting Insertion Berdasarkan IPK : ");
+        System.out.println("======================");
+        list.insertionSort();
+        list.tampil();
+        
     }
 }
