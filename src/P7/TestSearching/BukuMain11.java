@@ -36,7 +36,8 @@ public class BukuMain11 {
         System.out.println("Data Keseluruhan Buku : ");
         data.tampil();
         System.out.println("======================================================");
-        System.out.println("====Cari Data===");
+        System.out.println();
+        System.out.println("====Cari Data====");
         System.out.print("Masukkan Kode Buku yang dicari : ");
         int cari = sc11Int.nextInt();
         System.out.println("===Menggunakan Sequential Search===");
@@ -44,5 +45,12 @@ public class BukuMain11 {
         data.TampilPosisi(cari, posisi);
         System.out.println("=====================================");
         data.TampilData(cari, posisi);
+
+        System.out.println();
+        System.out.println("====Cari Buku====");
+        System.out.print("Masukkan Judul Buku yang Dicari : ");
+        String cariJudul = sc11.nextLine();
+        Buku11 dataBuku11 = data.FindBuku(cariJudul);
+        dataBuku11.tampilDataBuku();
     }
 }

@@ -34,6 +34,17 @@ public class PencarianBuku11 {
         return posisi;
     }
 
+    public Buku11 FindBuku(String cariJudul) {
+        Buku11 posisi = listBuku[0];
+        for (int i = 0; i < listBuku.length; i++) {
+            if (listBuku[i].judul.equalsIgnoreCase(cariJudul)) {
+                posisi = listBuku[i];
+                break;
+            }
+        }
+        return posisi;
+    }
+
     public void TampilPosisi(int x, int pos) {
         if (pos != -1) {
             System.out.println("Data : " + x + " Ditemukan Pada Index " + pos);
