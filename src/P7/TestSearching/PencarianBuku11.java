@@ -35,7 +35,7 @@ public class PencarianBuku11 {
     }
 
     public Buku11 FindBuku(String cariJudul) {
-        Buku11 posisi = listBuku[0];
+        Buku11 posisi = null;
         for (int i = 0; i < listBuku.length; i++) {
             if (listBuku[i].judul.equalsIgnoreCase(cariJudul)) {
                 posisi = listBuku[i];
@@ -63,5 +63,20 @@ public class PencarianBuku11 {
         } else {
             System.out.println("Data : " + x + " Tidak Ditemukan! ");
         }
+    }
+
+    public int FindBinarySearch(int cari, int left, int right) {
+        int mid;
+        if(right >= left) {
+            mid = (left + right) / 2;
+            if (cari == listBuku[mid].kodeBuku) {
+                return mid;
+            } else if (listBuku[mid].kodeBuku > cari) {
+                return FindBinarySearch(cari, left, mid);
+            } else {
+                return FindBinarySearch(cari, mid, right);
+            }
+        }
+        return -1;
     }
 }
