@@ -75,4 +75,10 @@ public class Gudang11 {
             System.out.println("Tumpukan Barang Kosong");
         }
     }
+
+    public void peeking() {
+        System.out.println("==========List Barang==========");
+        System.out.printf("Kode %d: %s (Kategori %s)\n", tumpukan[top].kode, tumpukan[top].nama,
+                tumpukan[top].kategori);
+    }
 }
