@@ -53,10 +53,14 @@ public class QueueMain {
                     antri.print();
                     break;
 
+                case 5: 
+                    antri.peekRear();
+                    break;
+
                 default:
                     break;
             }
-        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4);
+        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5);
     }
 
     public static void Menu() {
@@ -65,6 +69,7 @@ public class QueueMain {
         System.out.println("2. Antrian Keluar");
         System.out.println("3. Cek Antrian Terdepan");
         System.out.println("4. Cek Semua Antrian");
+        System.out.println("5. Cek Antrian Paling Belakang");
         System.out.println("---------------------");
     }
 }

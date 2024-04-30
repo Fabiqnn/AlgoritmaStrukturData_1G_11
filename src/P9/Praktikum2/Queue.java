@@ -105,4 +105,13 @@ public class Queue {
         }
         return dt;
     }
+
+    public void peekRear() {
+        if (!isEmpty()) {
+            System.out.println("Data Paling Belakang Adalah" + data[rear].noRek + " " + data[rear].nama + " "
+                    + data[rear].alamat + " " + data[rear].umur + " " + data[rear].saldo);
+        } else {
+            System.out.println("Queue Masih Kosong");
+        }
+    }
 }
