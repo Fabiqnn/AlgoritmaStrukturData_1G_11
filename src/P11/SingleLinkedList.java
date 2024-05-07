@@ -77,10 +77,10 @@ public class SingleLinkedList {
         if (isEmpty()) {
             System.out.println("Error, Linked List Masih Kosong");
         } else {
-            Node currentNode = head; //Mengatur Pointer ke Head
+            Node currentNode = head; // Mengatur Pointer ke Head
             if (position > 0) {
-                //position--;
-                while (position != 1) { //Algoritma traverse
+                // position--;
+                while (position != 1) { // Algoritma traverse
                     currentNode = currentNode.next;
                     position--;
                 }
@@ -90,6 +90,84 @@ public class SingleLinkedList {
                 addFirst(input);
             } else {
                 System.out.println("Tidak Ada Index -1");
+            }
+        }
+    }
+
+    public int getData(int position) {
+        Node currentNode = head;
+        for (int i = 0; i <= position; i++) {
+            currentNode = currentNode.next;
+        }
+        return currentNode.data;
+    }
+
+    public int indexOf(int key) {
+        Node currentNode = head;
+        int index = 0;
+        while (!isEmpty() && currentNode.data != key) {
+            currentNode = currentNode.next;
+            index++;
+        }
+        return index;
+    }
+
+    public void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked List Masih Kosong, Tidak Dapat Dihapus");
+        } else {
+            head = head.next;
+        }
+    }
+
+    public void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Linked List Masih Kosong, Tidak Dapat Dihapus");
+        } else {
+            Node currentNode = head;
+            while (currentNode.next != null) {
+                if (currentNode.next.next == null) {
+                    currentNode.next = null;
+                    break;
+                }
+
+                currentNode = currentNode.next;
+            }
+        }
+    }
+
+    public void remove(int key) {
+        if (isEmpty()) {
+            System.out.println("Linked List Masih Kosong, Tidak Dapat Dihapus");
+        } else {
+            Node currentNode = head;
+            while (currentNode.next != null) {
+                if (currentNode.data == key && currentNode == head) { // cek apakah key berada pada head linked list
+                    removeFirst();
+                } else if (currentNode.next.data == key) { // cek apakah setelah currentNode merupakan key
+                    currentNode.next = currentNode.next.next; // hubungkan currentNode link ke 2x setelah nya
+                    break;
+                }
+                currentNode = currentNode.next;
+            }
+        }
+    }
+
+    public void removeAt(int position) {
+        if (isEmpty()) {
+            System.out.println("Linked List Masih Kosong, Tidak Dapat Dihapus");
+        } else {
+            Node currentNode = head;
+            if (position > 0) { // posisi dimulai dari index ke 0
+                while (position != 1) {
+                    currentNode = currentNode.next;
+                    position--;
+                }
+                currentNode.next = currentNode.next.next;
+            } else if (position == 0) {
+                removeFirst();
+            } else {
+                System.out.println("Tidak Ada Posisi -1");
             }
         }
     }
