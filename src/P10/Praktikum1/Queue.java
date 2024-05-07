@@ -1,16 +1,16 @@
-package P9.Praktikum2;
+package P10.Praktikum1;
 
 /**
  * Queue
  */
 public class Queue {
 
-    Nasabah[] data;
+    int[] data;
     int front, rear, size, max;
 
     public Queue(int n) {
         max = n;
-        data = new Nasabah[max];
+        data = new int[max];
         size = 0;
         front = rear = -1;
     }
@@ -24,7 +24,7 @@ public class Queue {
     }
 
     public boolean isFull() {
-        if (size == max) {
+        if (size ==  max) {
             return true;
         } else {
             return false;
@@ -33,25 +33,22 @@ public class Queue {
 
     public void peek() {
         if (!isEmpty()) {
-            System.out.println("Elemen terdepan " + data[front].noRek + " " + data[front].nama + " "
-                    + data[front].alamat + " " + data[front].umur + " " + data[front].saldo);
+            System.out.println("Elemen terdepan " + data[front]);
         } else {
             System.out.println("Queue Masih Kosong");
         }
     }
 
     public void print() {
-        if (isEmpty()) {
+        if(isEmpty()) {
             System.out.println("Queue Masih Kosong");
         } else {
             int i = front;
             while (i != rear) {
-                System.out.println(data[i].noRek + " " + data[i].nama + " "
-                        + data[i].alamat + " " + data[i].umur + " " + data[i].saldo);
+                System.out.println(data[i] + " ");
                 i = (i + 1) % max;
             }
-            System.out.println(data[i].noRek + " " + data[i].nama + " "
-                    + data[i].alamat + " " + data[i].umur + " " + data[i].saldo);
+            System.out.println(data[i] + " ");
             System.out.println("Jumlah Elemen = " + size);
         }
     }
@@ -66,7 +63,7 @@ public class Queue {
         }
     }
 
-    public void Enqueue(Nasabah data) {
+    public void Enqueue(int data) {
         if (isFull()) {
             System.out.println("Queue Sudah Penuh");
             System.exit(0);
@@ -74,10 +71,10 @@ public class Queue {
             if (isEmpty()) {
                 front = rear = 0;
             } else {
-                if (rear == max - 1) {
+                if (rear == max -1) {
                     rear = 0;
                 } else {
-                    rear++;
+                    rear ++;
                 }
             }
         }
@@ -85,8 +82,8 @@ public class Queue {
         size++;
     }
 
-    public Nasabah Dequeue() {
-        Nasabah dt = null;
+    public int Dequeue() {
+        int dt = 0;
         if (isEmpty()) {
             System.out.println("Queue Masih Kosong");
             System.exit(0);
@@ -96,7 +93,7 @@ public class Queue {
             if (isEmpty()) {
                 front = rear = -1;
             } else {
-                if (front == max - 1) {
+                if (front == max -1) {
                     front = 0;
                 } else {
                     front++;
@@ -104,14 +101,5 @@ public class Queue {
             }
         }
         return dt;
-    }
-
-    public void peekRear() {
-        if (!isEmpty()) {
-            System.out.println("Data Paling Belakang Adalah" + data[rear].noRek + " " + data[rear].nama + " "
-                    + data[rear].alamat + " " + data[rear].umur + " " + data[rear].saldo);
-        } else {
-            System.out.println("Queue Masih Kosong");
-        }
     }
 }
