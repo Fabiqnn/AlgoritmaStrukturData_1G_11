@@ -85,4 +85,56 @@ public class DoubleLinkedList {
             System.out.println("\nBerhasil Diisi");
         }
     }
+
+    public void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Data Masih Kosong Tidak Dapat Melakukan Penghapusan");
+        } else {
+            head = head.next;
+            head.prev = null;
+            size--;
+        }
+    }
+    
+    public void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Data Masih Kosong Tidak Dapat Melakukan Penghapusan");
+        } else if (head.next == null) {
+            head = null;
+            size--;
+            return; //berfungsi agar kode dibawahnya tidak dijalankan
+        }
+        Node current = head;
+        while (current.next.next != null) {
+            current = current.next;
+        }
+        current.next = null;
+        size--;
+    }
+
+    public void remove(int index) {
+        if (isEmpty()) {
+            System.out.println("Data Masih Kosong Tidak Dapat Melakukan Penghapusan");
+        } else if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Nilai Index di Luar Batas");
+        } else if (index == 0) {
+            removeFirst();
+        } else {
+            Node current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+            if (current.next == null) {
+                current.prev.next = null;
+            } else if (current.prev == null) {
+                current = current.next;
+                current.prev = null;
+                head = current;
+            } else {
+                current.prev.next = current.next;
+                current.next.prev = current.prev;
+            }
+            size--;
+        }
+    }
 }
