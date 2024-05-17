@@ -41,11 +41,11 @@ public class DoubleLinkedList {
         }
     }
 
-    public void add(int data, int index) {
+    public void add(int data, int index) throws Exception{
         if (isEmpty()) {
             addFirst(data);
         } else if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Nilai Index Diluar Batas");
+            throw new Exception("Nilai Index Diluar Batas");
         } else {
             Node current = head;
             for (int i = 0; i < index; i++) {
@@ -112,11 +112,11 @@ public class DoubleLinkedList {
         size--;
     }
 
-    public void remove(int index) {
+    public void remove(int index) throws Exception{
         if (isEmpty()) {
             System.out.println("Data Masih Kosong Tidak Dapat Melakukan Penghapusan");
         } else if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Nilai Index di Luar Batas");
+            throw new Exception("Nilai Index di Luar Batas");
         } else if (index == 0) {
             removeFirst();
         } else {
@@ -135,6 +135,39 @@ public class DoubleLinkedList {
                 current.next.prev = current.prev;
             }
             size--;
+        }
+    }
+
+    public int getFirst() throws Exception{
+        if (isEmpty()) {
+            throw new Exception("Linked List Kosong");
+        } 
+        return head.data;
+    }
+    
+    public int getLast() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Linked List Kosong");
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            return current.data;
+        }
+    }
+    
+    public int get (int index) throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Linked List Kosong");
+        } else if (index < 0 || index > size) {
+            throw new Exception("Nilai Index Diluar Batas");
+        } else {
+            Node current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+            return current.data;
         }
     }
 }
