@@ -1,6 +1,6 @@
 {
     "java.project.sourcePaths": ["src"],
-    "editor.fontSize": 14,
+    "editor.fontSize": 15,
     "terminal.integrated.fontSize": 14,
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
