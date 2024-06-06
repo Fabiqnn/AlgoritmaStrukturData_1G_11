@@ -45,19 +45,15 @@ public class Graph {
             // System.out.println("Degree dari Gedung " + (char) ('A' + asal) + ": " +
             // list[asal].size());
         } catch (Exception e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
 
     public void removeEdge(int asal, int tujuan) {
         try {
-            for (int i = 0; i < vertex; i++) {
-                if (i == tujuan) {
-                    list[asal].remove(tujuan);
-                }
-            }
+            list[asal].remove(tujuan);
         } catch (Exception e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -81,7 +77,27 @@ public class Graph {
             }
             System.out.println();
         } catch (Exception e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void printRelation(int asal, int tujuan) {
+        boolean isFound = false;
+        try {
+            for (int i = 0; i < list[asal].size(); i++) {
+                if (list[asal].get(i) == tujuan) {
+                    isFound = true;
+                    System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan)
+                            + " Bertetangga " + "(" + list[asal].getJarak(i) + " m), ");
+                    break;
+                }
+            }
+            if (!isFound) {
+                System.out.println(
+                        "Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " Tidak Bertetangga");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 
