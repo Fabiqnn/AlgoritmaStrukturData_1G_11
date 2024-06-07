@@ -40,5 +40,7 @@ public class GraphMain {
         System.out.println("Hasil Setelah Penghapusan Edge");
         gdg.removeEdge(2, 1);
         gdg.printGraph();
+        System.out.println();
+        gdg.degree(0);
     }
 }

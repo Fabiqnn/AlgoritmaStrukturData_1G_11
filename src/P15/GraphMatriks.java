@@ -32,4 +32,22 @@ public class GraphMatriks {
             System.out.println();
         }
     }
+
+    public void degree(int asal) {
+        int inDegree = 0 , outDegree = 0;
+        for (int i = 0; i < vertex; i++) {
+            if (matrix[i][asal] != 0) {
+                inDegree++;
+            }
+        }
+
+        for (int i = 0; i < vertex; i++) {
+            if (matrix[asal][i] != 0) {
+                outDegree++;
+            }
+        }
+        System.out.println("InDegree Dari Gedung " + (char) ('A' + asal) + ": " + inDegree);
+        System.out.println("OutDegree Dari Gedung " + (char) ('A' + asal) + ": " + outDegree);
+        System.out.println("Degree Dari Gedung " + (char) ('A' + asal) + ": " + (inDegree + outDegree));
+    }
 }
